@@ -1,4 +1,6 @@
 # Unity - Test runner
+> Forked from [Game CI's Unity Test Runner](https://github.com/game-ci/unity-test-runner).
+> The only reason I forked was based off of [this conversation](https://github.com/game-ci/unity-test-runner/issues/220#issuecomment-1548151982) about returning a successful check.
 
 (Not affiliated with Unity Technologies)
 

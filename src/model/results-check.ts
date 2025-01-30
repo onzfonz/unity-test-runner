@@ -99,7 +99,7 @@ const ResultsCheck = {
       name: checkName,
       head_sha: headSha,
       status: 'completed',
-      conclusion: 'neutral',
+      conclusion: 'success',
       output,
     };
 

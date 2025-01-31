@@ -90,7 +90,7 @@ const ResultsCheck = {
     if (output.text.length > maxLength) {
       core.warning(`Test details of ${output.text.length} surpass limit of ${maxLength}`);
       output.text =
-        'Test details omitted from GitHub UI due to length. See console logs for details.';
+        'Test details omitted from GitHub UI due to length. See console log for details.';
     }
 
     core.info(`Posting results for ${headSha}`);

@@ -238,21 +238,23 @@ for platform in ${TEST_PLATFORMS//;/ }; do
     cat "$FULL_ARTIFACTS_PATH/$platform-player.log"
   fi
 
+  FAIL_EXIT_CODE = 1
   # Display results
   if [ $TEST_EXIT_CODE -eq 0 ]; then
     echo "Run succeeded, no failures occurred";
   elif [ $TEST_EXIT_CODE -eq 2 ]; then
     echo "Run succeeded, some tests failed";
+    TEST_EXIT_CODE=$FAIL_EXIT_CODE
   elif [ $TEST_EXIT_CODE -eq 3 ]; then
     echo "Run failure (other failure)";
+    TEST_EXIT_CODE=$FAIL_EXIT_CODE
   else
     echo "Unexpected exit code $TEST_EXIT_CODE";
+    TEST_EXIT_CODE=$FAIL_EXIT_CODE
   fi
 
-  if [ $TEST_EXIT_CODE -ne 0 ]; then
-    TEST_RUNNER_EXIT_CODE=$TEST_EXIT_CODE
-  fi
-
+  TEST_RUNNER_EXIT_CODE=$TEST_EXIT_CODE
+  
   echo ""
   echo "###########################"
   echo "#    $platform Results    #"
